@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 
 const app = express()
@@ -8,6 +10,8 @@ app.get('/', (req, res) => {
   res.send('<h1>holaa mundo con nodemon </h1> bienvenido empezamos')
 })
 
-app.listen(4000, () => {
-  console.log('servidor en el puerto 4000')
+const PORT = process.env.PORT || 4000
+
+app.listen(PORT, () => {
+  console.log(`servidor en el puerto ${PORT}`)
 })
